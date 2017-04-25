@@ -40,7 +40,7 @@ android {
 		applicationId "ru.megazlo.apnea"
 		minSdkVersion 14
 		targetSdkVersion 25
-		versionCode 15
+		versionCode 16
 		versionName '2.0'
 		versionNameSuffix 'beta 6'
 	}
