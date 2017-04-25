@@ -2,9 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 
-def aa_ver = '4.2.0'
-def lom_ver = '1.16.12'
-def compat_ver = '25.1.0'
+def aa_ver = '4.3.0'
+def lom_ver = '1.16.16'
+def compat_ver = '25.3.1'
 def ormLite_ver = '5.0'
 
 repositories {
@@ -22,7 +22,7 @@ buildscript {
 		// classpath 'com.android.tools.build:gradle:1.5.0'
 		// replace with the current version of the android-apt plugin
 		classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-		classpath 'me.tatarka:gradle-retrolambda:3.4.0'
+		classpath 'me.tatarka:gradle-retrolambda:3.6.1'
 	}
 }
 
@@ -42,7 +42,7 @@ android {
 		targetSdkVersion 25
 		versionCode 15
 		versionName '2.0'
-		versionNameSuffix 'beta 5'
+		versionNameSuffix 'beta 6'
 	}
 	compileOptions {
 		sourceCompatibility JavaVersion.VERSION_1_8

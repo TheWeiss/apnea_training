@@ -24,7 +24,7 @@
 	<string name="timer_hold_lb">Задержка</string>
 	<string name="timer_breath_lb">Дыхание</string>
 
-	<string name="snack_reset_sets">Сбросить настрйки?</string>
+	<string name="snack_reset_sets">Сбросить настройки?</string>
 	<string name="snack_stop_session">Остановить сессию?</string>
 	<string name="snack_tab_dev">В разработке. Можно будет создавать свои таблицы</string>
 
