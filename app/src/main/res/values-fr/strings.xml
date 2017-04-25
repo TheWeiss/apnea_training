@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Apnea</string>
+	<string name="main_act_title">Tables d\'apnée</string>
+	<string name="action_settings">Paramètres</string>
+
+	<string name="pref_main_cat">Principal</string>
+	<string name="pref_notify_cat">Notifications</string>
+	<string name="pref_o_cat">Entrainement O2</string>
+	<string name="pref_co_cat">Entrainement CO2</string>
+
+	<string name="pref_best_record">Meilleur temps d\'apnée</string>
+	<string name="pref_device_address">Adresse du périphérique</string>
+
+	<string name="pref_sec_suff">sec.</string>
+
+	<string name="pref_title_vibrate">Vibration</string>
+	<string name="pref_title_speech">Voix</string>
+
+	<string name="nav_title_info">Info</string>
+	<string name="nav_title_record">Record</string>
+	<string name="nav_title_spo">Journal de bord (a venir)</string>
+
+	<string name="nav_title_tables">Tables</string>
+	<string name="nav_title_settings">Paramètres</string>
+	<string name="nav_title_donate">Don</string>
+	<string name="def_tab_title_o2">Standard O2</string>
+	<string name="def_tab_title_co2">Standard CO2</string>
+
+	<string name="cancel">Annulation</string>
+
+	<string name="total_time">Temps: %1$s</string>
+
+	<string name="timer_hold_lb">Retenir</string>
+	<string name="timer_breath_lb">Respirer</string>
+
+	<string name="snack_stop_session">Stoppez la session?</string>
+	<string name="snack_reset_sets">Réinitialiser les paramètres?</string>
+	<string name="snack_tab_dev">A venir. Pouvoir créer ses propres tables.</string>
+
+	<string name="table_description_calc">Evaluée avec le paramètrage</string>
+	<string name="btn_discard">Rejeter</string>
+
+	<string name="sum_max_time">Temps maxi. d\'apnée:</string>
+	<string name="titl_co2_max_perc">Pourcentage du maximum</string>
+	<string name="titl_co2_beg_time">Temps initial de respiration</string>
+	<string name="sum_co2_beg_time">Temps de respiration au départ du cycle:</string>
+	<string name="titl_co2_reduce">Intervalle de réduction</string>
+	<string name="notif_breathe">Respiration: %1$s</string>
+	<string name="notif_hold">Retenir sa respiration: %1$s</string>
+	<string name="dlg_sess_complete">Fin de la session !</string>
+	<string name="tst_cant_edit">Vous ne pouvez pas éditer lorsque la session est en cours</string>
+
+	<string name="t_co2_end_time">Fin de respiration</string>
+	<string name="p_co2_end_time">Temps de respiration à la fin du cycle:</string>
+	<string name="t_o2_timeout">Respirer</string>
+	<string name="p_o2_timeout">Temps de respiration entre les arrêts:</string>
+	<string name="t_o2_increase_time">Augmenter le temps</string>
+	<string name="t_o2_start_time">Début de retenue</string>
+	<string name="p_o2_start_time">Temps de retenue initial de la série:</string>
+	<string name="t_o2_end_time">Fin de retenue</string>
+	<string name="p_o2_end_time">Temps de retenue final de la série:</string>
+	<string name="s_notify_vibrate">Vibrer pour les notifications</string>
+	<string name="s_notify_voice">Parler pour les notifications</string>
+
+	<string name="s_allow_bt">Requis: oxymètre Jumper JPD-500F</string>
+	<string name="t_allow_bt">Connectez l\'oxymètre</string>
+
+	<string name="t_notify_minute">Toutes les minutes</string>
+	<string name="s_notify_minute">Notification toutes les minutes avant la fin</string>
+
+	<string name="t_notify_30sec">Dernières 30 secondes</string>
+	<string name="s_notify_30sec">Alerte 30 secondes avant la fin</string>
+
+	<string name="t_notify_10sec">Dernières 10 secondes</string>
+	<string name="s_notify_10sec">Alerte 10 secondes avant la fin</string>
+
+	<string name="t_notify_5sec">Dernières 5 secondes</string>
+	<string name="s_notify_5sec">Décompte avant la fin</string>
+
+	<string name="s_notify_cat">Notifier les délais d\'attente</string>
+
+	<string name="t_notify_type">Types de notifications</string>
+	<string name="s_notify_type">Définir les types de notification pour les évènements</string>
+	<string name="bt_text_start">Début</string>
+	<string name="bt_text_stop">Fin</string>
+	<string name="arc_best_best">Meilleur</string>
+	<string name="dlg_new_rec">Avez-vous battu votre record?</string>
+
+	<string name="add_row">Ajouter une ligne</string>
+	<string name="save_table">Enregistrer la table</string>
+	<string name="table_name">Nom de la table</string>
+	<string name="tab_description">Description</string>
+	<string name="err_tab_save">Erreur lors de la sauvegarde</string>
+
+	<string name="valid_o2_simple">Paramètres O2 invalides</string>
+	<string name="valid_co2_simple">Paramètres CO2 invalides</string>
+
+	<string name="coming_soon_oxy">A venir</string>
+	<string name="spo_soon">Bientôt (décembre 2016)!\r\n Journaux et graphiques de SpO2 et du rythme cardiaque.\r\nPré-requis:\r\n• bluetooth 4.0\r\n• oxymètre JPD-500F\r\n• android 4.3</string>
+	<string name="invalid_num_format">Format invalide, ce doit être un total en secondes</string>
+	<string name="axis_spo">SpO2%</string>
+	<string name="axis_pulse">Pulsation</string>
+	<string name="axis_indicators">Indicateurs</string>
+	<string name="axis_time">Temps</string>
+	<string name="chart_row_total">Temps de session : %s</string>
+	<string name="chart_row_date">Date: %s</string>
+	<string name="time_added">Temps ajouté</string>
+	<string name="bt_must_enable">Vous devez activer le bluetooth</string>
+
+	<string name="don_link">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=5GKKLYLACMU6W&amp;lc=US&amp;currency_code=USD</string>
+	<string name="donate_text">Un grand merci pour la contribution au développement de ce projet</string>
+	<string name="donate_text_you">Vous pouvez aider également</string>
+</resources>
