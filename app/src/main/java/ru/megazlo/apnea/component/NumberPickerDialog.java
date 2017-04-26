@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.Nullable;
 import android.view.*;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 
 import java.util.List;
@@ -37,14 +37,21 @@ public class NumberPickerDialog extends AlertDialog implements DialogInterface.O
 		setButton(BUTTON_NEGATIVE, context.getText(android.R.string.cancel), (OnClickListener) null);
 		setTitle(context.getText(R.string.app_name));
 
-		FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		layoutParams.gravity = Gravity.CENTER;
+		LinearLayout layout = new LinearLayout(context);
+		LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+		layout.setOrientation(LinearLayout.VERTICAL);
+		layout.setGravity(Gravity.CENTER);
+		layout.setLayoutParams(parms);
+
+		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
 		picker = new NumberPicker(new ContextThemeWrapper(getContext(), R.style.NumberPickerTextColorStyle));
-		picker.setLayoutParams(layoutParams);
+		picker.setMinValue(2);
+		picker.setMaxValue(30);
 		picker.setValue(mInitialValue);
 
-		this.addContentView(picker, layoutParams);
+		layout.addView(picker, layoutParams);
+		setView(layout);
 	}
 
 	@Override
