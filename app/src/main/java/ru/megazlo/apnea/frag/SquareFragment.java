@@ -3,6 +3,7 @@ package ru.megazlo.apnea.frag;
 import android.app.Fragment;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.androidannotations.annotations.*;
 import org.androidannotations.annotations.sharedpreferences.Pref;
@@ -55,7 +56,7 @@ public class SquareFragment extends Fragment implements FabClickListener {
 	public void editValueEdge(View view) {
 		final Object tag = view.getTag();
 		NumberPickerDialog dlg = new NumberPickerDialog(getActivity(), 5/*(int) tag*/, (picker, value) -> {
-
+			Toast.makeText(getActivity(), "time: " + value, Toast.LENGTH_SHORT).show();
 		});
 		dlg.show();
 		/*NumberPicker dlg = new NumberPicker(getActivity(), null, 5);
