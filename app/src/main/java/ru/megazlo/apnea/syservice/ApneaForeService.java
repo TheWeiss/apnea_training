@@ -1,4 +1,4 @@
-package ru.megazlo.apnea;
+package ru.megazlo.apnea.syservice;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import ru.megazlo.apnea.MainAct_;
+import ru.megazlo.apnea.R;
 import ru.megazlo.apnea.component.Utils;
 import ru.megazlo.apnea.entity.RowState;
 import ru.megazlo.apnea.entity.TableApnea;

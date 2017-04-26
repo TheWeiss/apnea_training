@@ -1,4 +1,4 @@
-package ru.megazlo.apnea;
+package ru.megazlo.apnea.syservice;
 
 import android.annotation.TargetApi;
 import android.app.Service;
@@ -15,6 +15,7 @@ import org.androidannotations.annotations.sharedpreferences.Pref;
 
 import java.util.*;
 
+import ru.megazlo.apnea.R;
 import ru.megazlo.apnea.receivers.OxiReceiver;
 import ru.megazlo.apnea.service.ApneaPrefs_;
 

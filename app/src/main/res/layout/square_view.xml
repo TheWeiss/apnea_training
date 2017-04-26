@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+	<ru.megazlo.apnea.component.ArcProgress
+		android:id="@+id/arc_square_total"
+		android:layout_width="200dp"
+		android:layout_height="200dp"
+		android:layout_centerInParent="true"
+		android:background="@android:color/transparent"
+		custom:arc_bottom_text="@string/arc_best_best"
+		custom:arc_bottom_text_size="25sp"
+		custom:arc_finished_color="@color/arc_finished"
+		custom:arc_max="135"
+		custom:arc_progress="70"
+		custom:arc_text_color="@color/colorAccent"
+		custom:arc_text_size="70sp"
+		custom:arc_unfinished_color="@color/arc_unfinished"/>
+
+	<TextView
+		android:id="@+id/hold_full_tx"
+		android:layout_width="60dp"
+		android:layout_height="wrap_content"
+		android:layout_above="@id/arc_square_total"
+		android:layout_toRightOf="@id/arc_square_total"
+		android:background="@color/colorPrimaryUltraLight"
+		android:gravity="center"
+		android:padding="6dp"
+		android:text="5sec"/>
+
+	<TextView
+		android:id="@+id/exhal_tx"
+		android:layout_width="60dp"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/arc_square_total"
+		android:layout_toRightOf="@id/arc_square_total"
+		android:background="@color/colorPrimaryUltraLight"
+		android:gravity="center"
+		android:padding="6dp"
+		android:text="8sec"/>
+
+	<TextView
+		android:id="@+id/hold_empty_tx"
+		android:layout_width="60dp"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/arc_square_total"
+		android:layout_toLeftOf="@id/arc_square_total"
+		android:background="@color/colorPrimaryUltraLight"
+		android:gravity="center"
+		android:padding="6dp"
+		android:text="6sec"/>
+
+	<TextView
+		android:id="@+id/breathe_tx"
+		android:layout_width="60dp"
+		android:layout_height="wrap_content"
+		android:layout_above="@id/arc_square_total"
+		android:layout_toLeftOf="@id/arc_square_total"
+		android:background="@color/colorPrimaryUltraLight"
+		android:gravity="center"
+		android:padding="6dp"
+		android:text="10sec"/>
+
+	<ImageView
+		android:layout_width="18dp"
+		android:layout_height="200dp"
+		android:layout_alignRight="@id/breathe_tx"
+		android:layout_alignTop="@id/arc_square_total"
+		android:layout_marginRight="20dp"
+		android:src="@drawable/ic_tl_arrow"/>
+
+	<ImageView
+		android:layout_width="18dp"
+		android:layout_height="200dp"
+		android:layout_alignBottom="@id/arc_square_total"
+		android:layout_alignLeft="@id/hold_full_tx"
+		android:layout_marginLeft="20dp"
+		android:rotation="180"
+		android:src="@drawable/ic_tl_arrow"/>
+
+	<ImageView
+		android:layout_width="200dp"
+		android:layout_height="18dp"
+		android:layout_alignBottom="@id/exhal_tx"
+		android:layout_centerHorizontal="true"
+		android:src="@drawable/ic_rd_arrow"/>
+
+	<ImageView
+		android:layout_width="200dp"
+		android:layout_height="18dp"
+		android:layout_alignTop="@id/hold_full_tx"
+		android:layout_centerHorizontal="true"
+		android:rotation="180"
+		android:src="@drawable/ic_rd_arrow"/>
+
+	<ProgressBar
+		android:id="@+id/prg_square"
+		style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_above="@id/breathe_tx"
+		android:layout_marginBottom="25dp"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp"
+		android:indeterminate="false"
+		android:max="100"
+		android:progress="24"/>
+
+	<TextView
+		android:id="@+id/tv_sq_step_name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_above="@id/prg_square"
+		android:layout_alignLeft="@id/prg_square"
+		android:text="@string/speech_breathe"/>
+
+</RelativeLayout>

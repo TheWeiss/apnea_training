@@ -1,10 +1,9 @@
 package ru.megazlo.apnea;
 
 import android.Manifest;
-import android.app.*;
-import android.content.*;
-import android.content.pm.ActivityInfo;
-import android.net.Uri;
+import android.app.AlertDialog;
+import android.app.Fragment;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,7 +16,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.*;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.*;
@@ -25,6 +23,7 @@ import org.androidannotations.annotations.*;
 import ru.megazlo.apnea.entity.TableApnea;
 import ru.megazlo.apnea.frag.*;
 import ru.megazlo.apnea.receivers.ChangeFragmentReceiver;
+import ru.megazlo.apnea.syservice.ApneaForeService_;
 
 @EActivity(R.layout.activity_main)
 public class MainAct extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -123,6 +122,8 @@ public class MainAct extends AppCompatActivity implements NavigationView.OnNavig
 			setFragment(new RecordFragment_());
 		} else if (id == R.id.nav_tables) {
 			setFragment(tabList);
+		} else if (id == R.id.nav_square) {
+			setFragment(new SquareFragment_());
 		} else if (id == R.id.nav_donate) {
 			setFragment(new DonateFragment_());
 		}

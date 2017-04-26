@@ -8,6 +8,7 @@ import android.os.Build;
 import org.androidannotations.annotations.EApplication;
 
 import ru.megazlo.apnea.receivers.BluetoothReceiver;
+import ru.megazlo.apnea.syservice.BluetoothLeService_;
 
 /** Created by iGurkin on 23.12.2016. */
 @EApplication

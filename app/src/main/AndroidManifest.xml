@@ -27,7 +27,6 @@
 		android:supportsRtl="false"
 		android:name=".ApneaApplication_"
 		android:theme="@style/AppTheme">
-
 		<meta-data
 			android:name="com.google.android.backup.api_key"
 			android:value="AEdPqrEAAAAIMWsrDSSGn6q4g7En2PgtRuCaFC7c-cGtfyyOPg"/>
@@ -46,10 +45,13 @@
 			</intent-filter>
 		</activity>
 		<service
-			android:name=".ApneaForeService_"
+			android:name=".syservice.ApneaForeService_"
 			android:stopWithTask="true"/>
 		<service
-			android:name=".BluetoothLeService_"
+			android:name="syservice.BluetoothLeService_"
+			android:stopWithTask="true"/>
+		<service
+			android:name="syservice.LogBookService_"
 			android:stopWithTask="true"/>
 
 	</application>

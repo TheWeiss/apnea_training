@@ -9,7 +9,7 @@ import org.androidannotations.annotations.*;
 
 import java.util.List;
 
-import ru.megazlo.apnea.ApneaForeService_;
+import ru.megazlo.apnea.syservice.ApneaForeService_;
 import ru.megazlo.apnea.R;
 import ru.megazlo.apnea.entity.TableApnea;
 import ru.megazlo.apnea.extend.TableListAdapter;

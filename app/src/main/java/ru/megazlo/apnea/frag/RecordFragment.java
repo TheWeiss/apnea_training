@@ -23,9 +23,6 @@ import ru.megazlo.apnea.component.Utils;
 import ru.megazlo.apnea.receivers.OxiReceiver;
 import ru.megazlo.apnea.service.ApneaPrefs_;
 
-/**
- * Created by iGurkin on 05.09.2016.
- */
 @EFragment(R.layout.record_view)
 public class RecordFragment extends Fragment implements FabClickListener {
 

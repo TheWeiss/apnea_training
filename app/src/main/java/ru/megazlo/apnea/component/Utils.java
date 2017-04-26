@@ -43,7 +43,11 @@ public final class Utils {
 	}
 
 	public static int getTotalSeconds(String time) {
-		return getMinutes(time) * 60 + getSeconds(time);
+		return getTotalSeconds(getMinutes(time), getSeconds(time));
+	}
+
+	public static int getTotalSeconds(int minutes, int seconds) {
+		return minutes * 60 + seconds;
 	}
 
 	public static int getMinutes(String time) {

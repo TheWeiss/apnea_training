@@ -30,6 +30,15 @@
 	</group>
 
 	<group
+		android:id="@+id/grp7"
+		android:checkableBehavior="single">
+		<item
+			android:id="@+id/nav_square"
+			android:icon="@drawable/ic_square"
+			android:title="@string/nav_title_tables"/>
+	</group>
+
+	<group
 		android:id="@+id/grp4"
 		android:checkableBehavior="single">
 		<item

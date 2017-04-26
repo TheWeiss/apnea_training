@@ -2,22 +2,16 @@ package ru.megazlo.apnea.frag;
 
 import android.annotation.TargetApi;
 import android.app.Fragment;
-import android.content.*;
+import android.content.Intent;
 import android.os.Build;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
 import org.androidannotations.annotations.*;
 import org.androidannotations.annotations.res.StringRes;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.Observable;
-
-import ru.megazlo.apnea.ApneaForeService_;
+import ru.megazlo.apnea.syservice.ApneaForeService_;
 import ru.megazlo.apnea.R;
 import ru.megazlo.apnea.component.ArcProgress;
 import ru.megazlo.apnea.component.Utils;
