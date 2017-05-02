@@ -106,7 +106,8 @@
 		android:layout_marginRight="20dp"
 		android:indeterminate="false"
 		android:max="100"
-		android:progress="24"/>
+		android:progress="24"
+		android:theme="@style/SquareProgress"/>
 
 	<TextView
 		android:id="@+id/tv_sq_step_name"

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
 	<style name="AppTheme.NoActionBar">
@@ -13,5 +14,9 @@
 		<item name="android:windowNoTitle">true</item>
 		<item name="android:windowContentOverlay">@null</item>
 		<item name="android:windowBackground">@drawable/ic_brand</item>
+	</style>
+
+	<style name="SquareProgress" parent="Theme.AppCompat.Light">
+		<item name="colorAccent">@color/colorAccent</item>
 	</style>
 </resources>
