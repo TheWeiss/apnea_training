@@ -1,6 +1,7 @@
 package ru.megazlo.apnea.frag;
 
 import android.app.Fragment;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,7 +50,9 @@ public class SquareFragment extends Fragment implements FabClickListener {
 
 	@Override
 	public void modifyToContext(View view) {
-
+		view.setVisibility(View.VISIBLE);
+		FloatingActionButton fab = (FloatingActionButton) view;
+		fab.setImageResource(R.drawable.ic_play);
 	}
 
 	@Click({R.id.hold_full_tx, R.id.hold_empty_tx, R.id.exhal_tx, R.id.breathe_tx})
