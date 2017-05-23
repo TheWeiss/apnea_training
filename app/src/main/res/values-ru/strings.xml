@@ -35,6 +35,16 @@
 	<string name="pref_best_record">Лучший рекод апноэ</string>
 	<string name="pref_device_address">Адрес устройства</string>
 
+	<string name="pref_sqr_cat">Дыхание по квадрату</string>
+
+	<string name="titl_sqr_total_time">Общее время</string>
+	<string name="sum_sqr_total_time">Время на выполнение тренировки</string>
+
+	<string name="titl_sqr_hold_full">Время задержки на вдохе</string>
+	<string name="titl_sqr_hold_empty">Время задержки на выдохе</string>
+	<string name="titl_sqr_exhalation">Время выдоха</string>
+	<string name="titl_sqr_breathe">Время вдоха</string>
+
 	<string name="pref_co_cat">Тренировка CO2</string>
 	<string name="pref_main_cat">Основное</string>
 	<string name="pref_title_vibrate">Вибрация</string>
@@ -90,6 +100,10 @@
 	<string name="table_name">Название таблицы</string>
 	<string name="tab_description">Описание</string>
 	<string name="err_tab_save">Ошибка сохранения таблицы</string>
+
+	<string name="sqr_state_hold">задержка</string>
+	<string name="sqr_state_breathe">вдох</string>
+	<string name="sqr_state_exhale">выдох</string>
 
 	<string name="valid_o2_simple">Противоречия в настройках O2</string>
 	<string name="valid_co2_simple">Противоречия в настройках CO2</string>

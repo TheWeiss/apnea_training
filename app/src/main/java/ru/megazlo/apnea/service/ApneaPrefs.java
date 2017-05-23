@@ -37,6 +37,19 @@ public interface ApneaPrefs {
 	boolean notify5sec();
 	//endregion
 
+	//region дыхание по квадрату
+	@DefaultString("20:00")
+	String squareTotal();
+	@DefaultInt(5)
+	int squareHoldFull();
+	@DefaultInt(5)
+	int squareHoldEmpty();
+	@DefaultInt(5)
+	int squareExhalation();
+	@DefaultInt(5)
+	int squareBreathe();
+	//endregion
+
 	//region кислородное голодание
 	@DefaultString("2:00")
 	String o2Timeout();

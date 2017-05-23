@@ -57,6 +57,16 @@
 	<string name="btn_discard">Discard</string>
 	<string name="default_text" translatable="false">Default text</string>
 
+	<string name="pref_sqr_cat">Square breathing</string>
+
+	<string name="titl_sqr_total_time">Training time</string>
+	<string name="sum_sqr_total_time">Total training time</string>
+
+	<string name="titl_sqr_hold_full">Time hold full</string>
+	<string name="titl_sqr_hold_empty">Time hold empty</string>
+	<string name="titl_sqr_exhalation">Time exhalation</string>
+	<string name="titl_sqr_breathe">Time breathe</string>
+
 	<string name="sum_max_time">Maximum hold breathe time:</string>
 	<string name="titl_co2_max_perc">Percent of maximum</string>
 	<string name="titl_co2_beg_time">Breathe begin time</string>
@@ -114,6 +124,10 @@
 
 	<string name="valid_o2_simple">Invalid O2 settings</string>
 	<string name="valid_co2_simple">Invalid CO2 settings</string>
+
+	<string name="sqr_state_hold">hold</string>
+	<string name="sqr_state_breathe">breathe</string>
+	<string name="sqr_state_exhale">exhalation</string>
 
 	<string name="coming_soon_oxy">Coming soon</string>
 	<string name="spo_soon">Coming soon (december 2016)!\r\nSpO2 and heart rate log and graphs.\r\nSystem requirements:\r\n• bluetooth 4.0\r\n• oximeter JPD-500F\r\n• android 4.3</string>

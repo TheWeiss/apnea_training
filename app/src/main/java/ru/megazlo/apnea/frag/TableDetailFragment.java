@@ -122,9 +122,7 @@ public class TableDetailFragment extends Fragment implements FabClickListener {
 	}
 
 	private void setViewPlayPause(boolean isPlayClick) {
-		float scale = isPlayClick ? 1 : 0.5f;
 		final int visibleChild = isPlayClick ? View.VISIBLE : View.GONE;
-		//buttonPane.animate().scaleX(scale).scaleY(scale).setDuration(200).start();
 		for (int i = 0; i < buttonPane.getChildCount(); i++) {
 			buttonPane.getChildAt(i).setVisibility(visibleChild);
 		}

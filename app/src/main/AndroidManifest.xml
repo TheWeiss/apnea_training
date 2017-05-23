@@ -48,6 +48,9 @@
 			android:name=".syservice.ApneaForeService_"
 			android:stopWithTask="true"/>
 		<service
+			android:name=".syservice.SquareForeService_"
+			android:stopWithTask="true"/>
+		<service
 			android:name="syservice.BluetoothLeService_"
 			android:stopWithTask="true"/>
 		<service

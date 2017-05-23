@@ -25,6 +25,49 @@
 	</PreferenceCategory>
 
 	<PreferenceCategory
+		android:key="pref_sqr_cat_settings"
+		android:title="@string/pref_sqr_cat">
+
+		<ru.megazlo.apnea.component.TimePreference
+			android:defaultValue="20:00"
+			android:key="squareTotal"
+			android:title="@string/titl_sqr_total_time"
+			app:prefix="@string/sum_sqr_total_time"/>
+
+		<ru.megazlo.apnea.component.NumberPickerPreference
+			android:defaultValue="5"
+			android:key="squareHoldFull"
+			android:title="@string/titl_sqr_hold_full"
+			app:max="30"
+			app:min="2"
+			app:suffix="@string/pref_sec_suff"/>
+
+		<ru.megazlo.apnea.component.NumberPickerPreference
+			android:defaultValue="5"
+			android:key="squareHoldEmpty"
+			android:title="@string/titl_sqr_hold_empty"
+			app:max="30"
+			app:min="2"
+			app:suffix="@string/pref_sec_suff"/>
+
+		<ru.megazlo.apnea.component.NumberPickerPreference
+			android:defaultValue="5"
+			android:key="squareExhalation"
+			android:title="@string/titl_sqr_exhalation"
+			app:max="30"
+			app:min="2"
+			app:suffix="@string/pref_sec_suff"/>
+
+		<ru.megazlo.apnea.component.NumberPickerPreference
+			android:defaultValue="5"
+			android:key="squareBreathe"
+			android:title="@string/titl_sqr_breathe"
+			app:max="30"
+			app:min="2"
+			app:suffix="@string/pref_sec_suff"/>
+	</PreferenceCategory>
+
+	<PreferenceCategory
 		android:key="pref_co2_cat_settings"
 		android:title="@string/pref_co_cat">
 
@@ -89,8 +132,8 @@
 	</PreferenceCategory>
 
 	<PreferenceCategory
-		android:title="@string/t_notify_type"
-		android:summary="@string/s_notify_type">
+		android:summary="@string/s_notify_type"
+		android:title="@string/t_notify_type">
 		<SwitchPreference
 			android:defaultValue="false"
 			android:key="notifyVibrate"
@@ -110,26 +153,26 @@
 		<SwitchPreference
 			android:defaultValue="true"
 			android:key="notifyMinute"
-			android:title="@string/t_notify_minute"
-			android:summary="@string/s_notify_minute"/>
+			android:summary="@string/s_notify_minute"
+			android:title="@string/t_notify_minute"/>
 
 		<SwitchPreference
 			android:defaultValue="true"
 			android:key="notify30sec"
-			android:title="@string/t_notify_30sec"
-			android:summary="@string/s_notify_30sec"/>
+			android:summary="@string/s_notify_30sec"
+			android:title="@string/t_notify_30sec"/>
 
 		<SwitchPreference
 			android:defaultValue="true"
 			android:key="notify10sec"
-			android:title="@string/t_notify_10sec"
-			android:summary="@string/s_notify_10sec"/>
+			android:summary="@string/s_notify_10sec"
+			android:title="@string/t_notify_10sec"/>
 
 		<SwitchPreference
 			android:defaultValue="true"
 			android:key="notify5sec"
-			android:title="@string/t_notify_5sec"
-			android:summary="@string/s_notify_5sec"/>
+			android:summary="@string/s_notify_5sec"
+			android:title="@string/t_notify_5sec"/>
 	</PreferenceCategory>
 
 </PreferenceScreen>

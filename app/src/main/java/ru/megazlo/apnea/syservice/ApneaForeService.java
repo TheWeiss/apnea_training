@@ -30,12 +30,7 @@ import ru.megazlo.apnea.service.AlertService;
 import ru.megazlo.apnea.service.ApneaService;
 
 @EService
-public class ApneaForeService extends Service {
-
-	public static final int STOP = 0;
-	public static final int RUN = 1;
-	public static final int PAUSE = 2;
-	public static int STATE = STOP;
+public class ApneaForeService extends AbstractForeService {
 
 	private final static int add_time = 10;
 
@@ -51,12 +46,9 @@ public class ApneaForeService extends Service {
 	NotificationManager notificationManager;
 
 	private int progress;
-	private Notification.Builder builder;
-	private Timer timer = new Timer();
 	private TableApnea table;
 	private TableApneaRow currentItem;
 	private List<TableApneaRow> items;
-	private ScreenOffReceiver receiver = new ScreenOffReceiver();
 
 	@Nullable
 	@Override
@@ -92,7 +84,6 @@ public class ApneaForeService extends Service {
 		currentItem = items.get(0);
 		currentItem.setState(RowState.BREATHE);
 		startTimer();
-		registerReceiver(receiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
 		return START_NOT_STICKY;
 	}
 
@@ -198,11 +189,9 @@ public class ApneaForeService extends Service {
 		getApplication().sendBroadcast(tb);
 	}
 
-	private PendingIntent getPendingIntent(Class clazz) {
-		Intent intent = new Intent(getApplicationContext(), clazz);
-		intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+	@Override
+	protected void setExtraOnPendingIntent(Intent intent) {
 		intent.putExtra(TABLE_RESTORE, table);
-		return PendingIntent.getActivity(getApplicationContext(), 651651, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 	}
 
 	@Receiver(actions = ApneaForeReceiver.ACTION)
@@ -231,13 +220,13 @@ public class ApneaForeService extends Service {
 		final int spo = intent.getIntExtra(OxiReceiver.SPO_VAL, -1);
 	}
 
-	class ApneaTimerTask extends TimerTask {
+	private class ApneaTimerTask extends TimerTask {
 		@Override
 		public void run() {
 			updateProgress();
 		}
 	}
 
-	class EndCycleException extends Exception {
+	private class EndCycleException extends Exception {
 	}
 }
