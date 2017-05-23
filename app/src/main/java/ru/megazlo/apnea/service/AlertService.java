@@ -1,6 +1,8 @@
 package ru.megazlo.apnea.service;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -11,6 +13,7 @@ import org.androidannotations.annotations.sharedpreferences.Pref;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Locale;
 
 import ru.megazlo.apnea.R;
@@ -40,6 +43,10 @@ public class AlertService implements TextToSpeech.OnInitListener, Closeable {
 	private TextToSpeech getTts() {
 		if (tts == null) {
 			tts = new TextToSpeech(context, this);
+			int result = tts.setLanguage(Locale.US);
+			if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+				Log.e("TTS", "This Language is not supported");
+			}
 		}
 		return tts;
 	}
@@ -92,7 +99,11 @@ public class AlertService implements TextToSpeech.OnInitListener, Closeable {
 	private void notifyAlertSpeech(String textToSpeech) {
 		Log.i("TTS", textToSpeech);
 		if (pref.notifySpeech().get()) {
-			getTts().speak(textToSpeech, TextToSpeech.QUEUE_FLUSH, null);
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+				tts.speak(textToSpeech, TextToSpeech.QUEUE_FLUSH, null, null);
+			}else{
+				tts.speak(textToSpeech, TextToSpeech.QUEUE_FLUSH, null);
+			}
 		}
 	}
 
