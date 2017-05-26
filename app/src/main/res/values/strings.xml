@@ -128,6 +128,7 @@
 	<string name="sqr_state_hold">hold</string>
 	<string name="sqr_state_breathe">breathe</string>
 	<string name="sqr_state_exhale">exhalation</string>
+	<string name="sqr_sec_format">%1$s sec</string>
 
 	<string name="coming_soon_oxy">Coming soon</string>
 	<string name="spo_soon">Coming soon (december 2016)!\r\nSpO2 and heart rate log and graphs.\r\nSystem requirements:\r\n• bluetooth 4.0\r\n• oximeter JPD-500F\r\n• android 4.3</string>

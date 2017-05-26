@@ -104,6 +104,7 @@
 	<string name="sqr_state_hold">задержка</string>
 	<string name="sqr_state_breathe">вдох</string>
 	<string name="sqr_state_exhale">выдох</string>
+	<string name="sqr_sec_format">%1$s сек</string>
 
 	<string name="valid_o2_simple">Противоречия в настройках O2</string>
 	<string name="valid_co2_simple">Противоречия в настройках CO2</string>

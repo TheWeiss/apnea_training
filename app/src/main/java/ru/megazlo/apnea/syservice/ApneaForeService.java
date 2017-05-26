@@ -36,7 +36,6 @@ public class ApneaForeService extends AbstractForeService {
 
 	private final static int ONGOING_NOTIFICATION_ID = 251665161;
 	public static final String TABLE_RESTORE = "table_restore";
-	public static final String IS_ALERT_SERIES_END = "is_alert_series_end";
 
 	@Bean
 	AlertService alertService;

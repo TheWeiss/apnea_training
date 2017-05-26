@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.BitmapFactory;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.androidannotations.annotations.*;
 import org.androidannotations.annotations.sharedpreferences.Pref;
@@ -15,6 +16,7 @@ import java.util.TimerTask;
 import ru.megazlo.apnea.MainAct_;
 import ru.megazlo.apnea.R;
 import ru.megazlo.apnea.component.Utils;
+import ru.megazlo.apnea.receivers.SquareForeReceiver;
 import ru.megazlo.apnea.receivers.SquareFragmentReceiver;
 import ru.megazlo.apnea.service.AlertService;
 import ru.megazlo.apnea.service.ApneaPrefs_;
@@ -26,6 +28,7 @@ public class SquareForeService extends AbstractForeService {
 	private final static int ONGOING_NOTIFICATION_ID = 251665162;
 
 	private int totalProgress;
+	private int totalMax;
 	private int currentMax;
 	private int currentProgress;
 	private State state = State.BREATHE;
@@ -53,17 +56,19 @@ public class SquareForeService extends AbstractForeService {
 	}
 
 	private int getTotalMax() {
-		return Utils.getTotalSeconds(pref.squareTotal().get());
+		return totalMax;
 	}
 
 	private void startTimer() {
+		totalMax = Utils.getTotalSeconds(pref.squareTotal().get());
+		currentMax = pref.squareBreathe().get();
 		timer.scheduleAtFixedRate(new SquareTimerTask(), 0, 1000);
 		STATE = RUN;
 		registerReceiver(receiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
 	}
 
 	private void stopTimer() {
-		//updateFragmentUi(true);
+		updateFragmentUi(true);
 		unregisterReceiver(receiver);
 		STATE = STOP;
 		try {
@@ -74,7 +79,6 @@ public class SquareForeService extends AbstractForeService {
 
 	@Override
 	protected void setExtraOnPendingIntent(Intent intent) {
-
 	}
 
 	@Override
@@ -94,16 +98,22 @@ public class SquareForeService extends AbstractForeService {
 			updateFragmentUi(false);
 			updateNotificationUi();
 			if (totalProgress >= getTotalMax()) {
+				Intent mainInt = new Intent(getApplicationContext(), MainAct_.class);
+				mainInt.setFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+				mainInt.putExtra(IS_ALERT_SERIES_END, true);
+				startActivity(mainInt);
 				stopTimer();
 			}
 			if (currentProgress >= currentMax) {
 				currentProgress = 0;
-				swichState();
+				switchState();
 			}
+		} else {// здесь видимо пауза
+			updateFragmentUi(false);
 		}
 	}
 
-	private void swichState() {
+	private void switchState() {
 		if (state == State.BREATHE) {
 			state = State.HOLD_FULL;
 			currentMax = pref.squareHoldFull().get();
@@ -143,6 +153,19 @@ public class SquareForeService extends AbstractForeService {
 			builder.setContentText(getString(R.string.notif_hold, arg));
 		}*/
 		notificationManager.notify(ONGOING_NOTIFICATION_ID, builder.getNotification());
+	}
+
+	@Receiver(actions = SquareForeReceiver.ACTION)
+	void serviceCommandReceiver(Intent intent) {
+		final String action = intent.getStringExtra(SquareForeReceiver.ACTION_TYPE);
+		if (SquareForeReceiver.ACTION_PAUSE.equals(action)) {
+			STATE = PAUSE;
+		} else if (SquareForeReceiver.ACTION_RESUME.equals(action)) {
+			STATE = RUN;
+		} else if (SquareForeReceiver.ACTION_ADD_TIME.equals(action)) {
+			totalMax += 30;
+			Toast.makeText(getApplicationContext(), R.string.time_added, Toast.LENGTH_SHORT).show();
+		}
 	}
 
 	private class SquareTimerTask extends TimerTask {

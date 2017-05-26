@@ -17,6 +17,7 @@ public abstract class AbstractForeService extends Service {
 	public static final int RUN = 1;
 	public static final int PAUSE = 2;
 	public static int STATE = STOP;
+	public static final String IS_ALERT_SERIES_END = "is_alert_series_end";
 
 	protected Notification.Builder builder;
 	protected Timer timer = new Timer();

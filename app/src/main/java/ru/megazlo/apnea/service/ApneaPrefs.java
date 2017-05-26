@@ -40,13 +40,13 @@ public interface ApneaPrefs {
 	//region дыхание по квадрату
 	@DefaultString("20:00")
 	String squareTotal();
-	@DefaultInt(5)
+	@DefaultInt(7)
 	int squareHoldFull();
-	@DefaultInt(5)
+	@DefaultInt(7)
 	int squareHoldEmpty();
-	@DefaultInt(5)
+	@DefaultInt(7)
 	int squareExhalation();
-	@DefaultInt(5)
+	@DefaultInt(7)
 	int squareBreathe();
 	//endregion
 
